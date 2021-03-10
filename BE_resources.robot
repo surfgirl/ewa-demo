@@ -4,7 +4,7 @@ ${payload_seller}  _csrf=0392fa63-f09b-41af-9dee-cde358d69958&username=ewa.wala%
 ${url}  https://escrowbackend-dev-dohodnuto.auth.eu-central-1.amazoncognito.com
 ${path}  /login?response_type=token&client_id=4hf1cs4b3hk0aosrmu67gskf2g&redirect_uri=http://localhost/
 ${STATUS_CODE_OK}  302
-${ENDPOINT_GRAPHQL}  https://api.dev.dohodnuto.cz/graphql
+${ENDPOINT_GRAPHQL}  https://www.api.dev.dohodnuto.cz/graphql
 ${STATUS_CODE_OK}  201
 
 *** Settings ***
