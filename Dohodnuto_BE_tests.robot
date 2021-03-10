@@ -7,7 +7,9 @@ Library   OperatingSystem
 
 Resource  ../../Resources/common.robot
 Resource  ../../Resources/variables.robot
-Resource  ../../Resources/Dohodnuto2_resources.robot 
+
+Resource  ../../Resources/Dohodnuto_resources.robot 
+
 Resource  ../../Resources/Dohodnuto_Login_Registration.robot
 Resource  ../../Resources/Dohodnuto_Variables.robot
 Resource  ../../Resources/BE_resources.robot
