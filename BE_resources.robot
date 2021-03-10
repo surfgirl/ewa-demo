@@ -14,13 +14,19 @@ Library  Collections
 Library  OperatingSystem
 Library  JSONLibrary
 
+
 Library  updating line 17 ../Libraries/jsonLibrary.py
+
+Library  updating line 17 ../Libraries/jsonLibrary.py
+
 
 *** Keywords ***
 
 
+
+
 Get Access Token Seller
-  ${headers} = test tets tetstststt Create Dictionary  Content-Type=application/x-www-form-urlencoded  Connection=keep-alive  Cookie=XSRF-TOKEN=0392fa63-f09b-41af-9dee-cde358d69958; cognito-fl=""W10=""
+
   Create Session  cognito  ${url}
   ${res} =  Post Request  cognito  ${path}  data=${payload_seller}  headers=${headers}  allow_redirects=${False}
   Should Be Equal As Strings  ${res.status_code}  ${STATUS_CODE_OK}
@@ -48,12 +54,7 @@ Attach To Deal
     ${json_obj}=    Update Value To Json     ${json_obj}    $..variables.AttachClientToRoleInput.dealId    ${dealId}
     ${new_obj}=     Convert JSON To String    ${json_obj}
     Create File     ./Data//attach_to_deal.json    ${new_obj}
-    Create Session  graphqlsession  ${ENDPOINT_GRAPHQL}  verify=true
-    ${headers}=  Create Dictionary  Authorization=${access_token_seller}  Content-Type=application/json
-    ${request_body}=  Get File  ./Data//attach_to_deal.json
-    ${resp}=  post request  graphqlsession  /  data=${request_body}  headers=${headers}
-    #Should Be Equal As Strings  ${resp.status_code}  ${STATUS_CODE_OK}
-    ${resp_json}=  Set Variable  ${resp.json()}
+
 
 Update Request Payload With Current Deal ID
     ${json_obj}=    Load JSON From File     ./Data//money_on_jumbo.json
