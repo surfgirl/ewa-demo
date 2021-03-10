@@ -17,15 +17,7 @@ Library  JSONLibrary
 Library   ../Libraries/jsonLibrary.py
 
 *** Keywords ***
-Get Access Token Buyer
-  ${headers} =  Create Dictionary  Content-Type=application/x-www-form-urlencoded  Connection=keep-alive  Cookie=XSRF-TOKEN=20ccd571-6f63-415e-8a15-a443b2eadc49; cognito-fl=""W10=""
-  Create Session  cognito  ${url}
-  ${res} =  Post Request  cognito  ${path}  data=${payload_buyer}  headers=${headers}  allow_redirects=${False}
-  Should Be Equal As Strings  ${res.status_code}  ${STATUS_CODE_OK}
-  #Status Should Be  302  ${res}
-  Log  ${res.headers['Location']}
-  ${access_token_buyer}=  Get substring  ${res.headers['Location']}  1198  2277
-  Set Global Variable  ${access_token_buyer}
+
 
 Get Access Token Seller
   ${headers} =  Create Dictionary  Content-Type=application/x-www-form-urlencoded  Connection=keep-alive  Cookie=XSRF-TOKEN=0392fa63-f09b-41af-9dee-cde358d69958; cognito-fl=""W10=""
